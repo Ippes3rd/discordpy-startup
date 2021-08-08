@@ -23,6 +23,10 @@ async def ping(ctx):
 async def neko(ctx):
     await ctx.send('にゃーん')
     
+@bot.command()
+async def inu(ctx):
+    await ctx.send('（Ｕ＾ω＾）わんわんお！')    
+    
 @tasks.loop(seconds=60)
 async def loop():
     # 現在の時刻
