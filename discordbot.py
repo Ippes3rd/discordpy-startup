@@ -1,9 +1,11 @@
 from discord.ext import commands
+from discord.ext import tasks
 import os
 import traceback
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
+CHANNEL_ID = '#test' #チャンネルID
 
 
 @bot.event
@@ -20,5 +22,19 @@ async def ping(ctx):
 @bot.command()
 async def neko(ctx):
     await ctx.send('にゃーん')
+    
+@tasks.loop(seconds=60)
+async def loop():
+    # 現在の時刻
+    now = datetime.now().strftime('%H:%M')
+    if now == '07:00':
+        channel = client.get_channel(CHANNEL_ID)
+        await channel.send('おはよう')  
 
+#ループ処理実行
+loop.start()
+
+# Botの起動とDiscordサーバーへの接続
+client.run(TOKEN)
+        
 bot.run(token)
