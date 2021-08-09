@@ -14,9 +14,9 @@ client = discord.Client()
 async def loop():
     # 現在の時刻
     now = datetime.now().strftime('%a %H:%M')
-    if now == 'Mon 11:00':
+    if now == 'Sun 14:00': # ロンドン時間なので9時間サバ読むこと
         channel = client.get_channel(CHANNEL_ID)
-        await channel.send('通知テストだよ')  
+        await channel.send('RP消化しましたか？あと1時間でチーム競技場〆です！')  
 
 #ループ処理実行
 loop.start()
