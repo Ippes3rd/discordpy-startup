@@ -14,7 +14,7 @@ client = discord.Client()
 async def loop():
     # 現在の時刻
     now = datetime.now().strftime('%a %H:%M')
-    if now == 'Mon 19:25':
+    if now == 'Mon 10:29':
         channel = client.get_channel(CHANNEL_ID)
         await channel.send('月曜日だよ')  
 
