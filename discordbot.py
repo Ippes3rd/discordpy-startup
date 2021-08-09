@@ -13,10 +13,10 @@ client = discord.Client()
 @tasks.loop(seconds=60)
 async def loop():
     # 現在の時刻
-    now = datetime.now().strftime('%H:%M')
-    if now == '10:03':
+    now = datetime.now().strftime('%a %H:%M')
+    if now == 'Mon 19:25':
         channel = client.get_channel(CHANNEL_ID)
-        await channel.send('おはよう')  
+        await channel.send('月曜日だよ')  
 
 #ループ処理実行
 loop.start()
