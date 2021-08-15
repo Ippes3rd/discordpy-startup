@@ -16,7 +16,7 @@ async def loop():
     now = datetime.now().strftime('%a %H:%M')
     if now == 'Sun 14:00': # ロンドン時間なので9時間サバ読むこと
         channel = client.get_channel(CHANNEL_ID)
-        await channel.send('RP消化しましたか？あと1時間でチーム競技場〆です！')  
+        await channel.send('チーム競技場〆まであと1時間！')  
 
 #ループ処理実行
 loop.start()
